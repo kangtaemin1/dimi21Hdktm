@@ -1,0 +1,86 @@
+<!-- live server ALT + L O -->
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/dist/output.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #ec137f;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .bottom-border{
+    width: 70%; /*border의 길이*/
+    border-bottom: solid #ec137f; /*border을 아래에다가 두고 색깔 지정*/
+    text-align: center; /*border 안의 텍스트 중간에 위치*/
+    margin: auto; /*border를 중간으로 끌어오는 것*/
+  }
+
+  .grid-container { /*여러개의 행으로 나누는 부분 */
+    display: grid; /*이걸 넣어야지 가로로 화면이 나뉨*/
+    grid-template-columns: 10% 20% 40% 30%; /*나뉜 부분 수만큼 각각의 비율 지정*/
+    grid-gap: 10px; /*잘 모르겠는데 일단 넣음*/
+    padding: 10px; /*잘 모르겠는데 일단 넣음*/
+  }
+
+  .item1 {
+    grid-row: 1 / span 2; /*안에 들어가있는 텍스트가 모두 각가의 박스로 이루어져있는데 이 박스의 가로 세로 지정*/
+  }
+
+  </style>
+  </head>
+  <body>
+
+  <div class="topnav">
+    <a class="active" href="#home">메인</a>
+    <a href="#news">게시물</a>
+    <a href="#contact">평균 성적</a>
+    <a href="#about">마이페이지</a>
+  </div>
+
+  <div style="padding-left:16px">
+    <h2>디미고 지망생 커뮤니티</h2>
+    <p>디미고 커뮤니티에 오신 걸 환영합니다..!</p>
+  </div>
+
+  <div class="bottom-border">
+    <div class="grid-container">
+      <div class="item1">날짜</div>
+      <div class="item1">제목</div>
+      <div class="item1">추천수</div>
+      <div class="item1">조회수</div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+
+  </div>
+
+</body>
+</html>

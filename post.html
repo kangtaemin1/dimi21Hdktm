@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #ec137f;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    .input {
+        align-items: center;
+        justify-content: center; /*글쓰는 부분 중앙으로 위치*/
+        display: flex; /*이걸 설정 해줘야지 중앙으로 위치됨*/
+        flex-direction: row; /*잘 모르겠는데 일단 넣음*/
+        margin-top: 5rem; /*게시글 쓰는 부분의 위와의 거리*/
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">메인</a>
+        <a href="#news">게시물</a>
+        <a href="#contact">평균 성적</a>
+        <a href="#about">마이페이지</a>
+    </div>
+    <div style="padding-left:16px">
+        <h2>글작성</h2>
+        <p>쓰고 싶은 글을 작성해주세요</p>
+    </div>
+    <form action="/action_page.php" method="get" target="_blank">
+        <div class="input">
+            <input type="text" height="300px">
+        </div>
+    </form>
+</body>
+</html>

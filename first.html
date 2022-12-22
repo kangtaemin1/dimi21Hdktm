@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body  {
+        background-repeat: no-repeat;
+        background-color: #ffffff;
+      }
+      body::after {
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: url("dimigo.jpg");
+        background-size: 1550px 800px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0.5;
+      }
+      .open-button1 {
+        background-color: #ec137f;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 265px;
+        right: 625px;
+        width: 280px;
+        z-index: 2;
+      }
+      .open-button2 {
+        background-color: #ec137f;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 200px;
+        right: 625px;
+        width: 280px;
+        z-index: 2;
+      }
+      .form-popup1 {
+        display: none;
+        position: fixed;
+        bottom: 150px;
+        right: 600px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+      .form-popup2 {
+        display: none;
+        position: fixed;
+        bottom: 100px;
+        right: 600px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+      .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+      }
+      .form-container input[type=text], .form-container input[type=password] {
+        width: 90%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+      .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      }
+      .form-container .cancel {
+        background-color: red;
+      }
+    </style>
+	   <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h2 class="">디미고 지망생 커뮤니티에 온 것을 환영합니다!</h2>
+    <button class="open-button1" onclick="loginForm()">로그인</button>
+    <button class="open-button2" onclick="newForm()">회원가입</button>
+    <div class="form-popup1" id="loginForm">
+      <form action="/login-success.html" class="form-container" method="post">
+      <h1>로그인</h1>
+
+      <label for="id"><b>아이디</b></label>
+      <input type="text" placeholder="Enter Id" name="id" required>
+
+      <label for="pw"><b>비밀번호</b></label>
+      <input type="password" placeholder="Enter Password" name="pw" required>
+
+      <button type="submit" class="btn">로그인</button>
+      <button type="button" class="btn cancel" onclick="closeForm1()">취소</button>
+    </form>
+  </div>
+  <div class="form-popup2" id="signupForm">
+    <form action="/newlogin-success.html" class="form-container" method="post">
+      <h1>회원가입</h1>
+
+      <label for="id"><b>아이디</b></label>
+      <input type="text" placeholder="Enter Id" name="id" required>
+
+      <label for="pw"><b>비밀번호</b></label>
+      <input type="password" placeholder="Enter Password" name="pw" required>
+
+      <label for="gd"><b>교과점수</b></label>
+      <input type="text" placeholder="Enter grade" name="gd" required>
+
+      <label for="sg"><b>생기부점수</b></label>
+      <input type="text" placeholder="Enter sangiboo" name="sg" required>
+
+      <button type="submit" class="btn" onclick="makeuser()">회원가입</button>
+      <button type="button" class="btn cancel" onclick="closeForm2()">취소</button>
+    </form>
+  </div>
+  <script type="text/javascript">
+  function loginForm() {
+    document.getElementById("loginForm").style.display = "block";
+  }
+  function newForm() {
+    document.getElementById("signupForm").style.display = "block";
+  }
+  function closeForm1() {
+    document.getElementById("loginForm").style.display = "none";
+  }
+  function closeForm2() {
+    document.getElementById("signupForm").style.display = "none";
+  }
+  </script>
+  </body>
+  <script>
+    document.querySelector('button').addEventListener('click', (e) => {
+                e.preventDefault();
+                const username = document.querySelector('#id').value;
+ 
+                const password = document.querySelector('#pw').value;
+                     
+                fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: 'Bearer abcdxyz',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id,
+                        password,
+                    }),
+                })
+                    .then((res) => {
+                        return res.json();
+                    })
+                    .then((data) => console.log(data));
+            });
+  </script>
+</html>
